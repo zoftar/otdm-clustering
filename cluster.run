@@ -14,4 +14,4 @@ show;
 option solver cplex;
 solve;
 display x;
-#print x > out "result.txt";
+display x>output.dat;
