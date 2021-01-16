@@ -1,7 +1,7 @@
-param m;
+param m := 100;
 param n := 2;
 param A{1..m,1..n};
-param k;
+param k := 3;
 
 param D  {i in 1..m,j in 1..m} = sqrt((A[i,1]-A[j,1])^2 + (A[i,2]-A[j,2])^2);
 

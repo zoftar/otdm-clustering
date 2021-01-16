@@ -1,13 +1,6 @@
 model cluster.mod;
-param inputfile symbolic;
+param inputfile symbolic := "data_100.dat";
 
-
-printf("m:");
-read m <-;
-printf("inputfile:");
-read inputfile<-;
-printf("k:");
-read k <-;
 read {i in 1..m}(A[i,1], A[i,2]) < (inputfile);
 show;
 
@@ -15,3 +8,9 @@ option solver cplex;
 solve;
 display x;
 display x>output.dat;
+for {i in 1..m} {
+for {j in 1..m} {
+	 printf '%d ', x[i,j] >> output.txt;
+	 }
+	 printf '\n' >> output.txt;
+	 }
